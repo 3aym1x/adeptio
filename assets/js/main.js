@@ -50,12 +50,25 @@ contactForm?.addEventListener("submit", (event) => {
   const name = data.get("name") || "";
   const phone = data.get("phone") || "";
   const destination = data.get("destination") || "";
+  const organization = data.get("organization") || "";
+  const partnerType = data.get("partnerType") || "";
   const message = data.get("message") || "";
 
-  const subject = encodeURIComponent("Demande de rendez-vous ADEPTIO");
-  const body = encodeURIComponent(
-    `Nom: ${name}\nTéléphone: ${phone}\nDestination: ${destination}\n\nMessage:\n${message}`
+  const isPartnerRequest = Boolean(organization || partnerType);
+  const subject = encodeURIComponent(
+    isPartnerRequest ? "Demande de partenariat ADEPTIO" : "Demande de rendez-vous ADEPTIO"
   );
+  const bodyLines = [
+    `Nom: ${name}`,
+    organization ? `Organisation: ${organization}` : null,
+    `Telephone: ${phone}`,
+    destination ? `Destination: ${destination}` : null,
+    partnerType ? `Type de partenaire: ${partnerType}` : null,
+    "",
+    "Message:",
+    message
+  ].filter((line) => line !== null);
+  const body = encodeURIComponent(bodyLines.join("\n"));
 
   if (formStatus) {
     formStatus.textContent = "Ouverture de votre e-mail...";

@@ -11,14 +11,14 @@
 
 .landing-intro {
   position: relative;
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 88px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
   background: var(--navy-dark);
-  padding: 72px 24px 80px;
+  padding: 44px 24px 56px;
 }
 
 /* Faint image texture behind the gradient */
@@ -64,7 +64,7 @@
 /* Pill badge */
 .landing-eyebrow {
   display: inline-block;
-  margin: 0 0 30px;
+  margin: 0 0 18px;
   padding: 7px 22px;
   background: rgba(232, 98, 27, 0.13);
   border: 1px solid rgba(232, 98, 27, 0.38);
@@ -78,8 +78,8 @@
 
 /* Giant logo title */
 .landing-intro h1 {
-  margin: 0 0 30px;
-  font-size: clamp(3.8rem, 9vw, 9rem);
+  margin: 0 0 20px;
+  font-size: clamp(3.2rem, 7.2vw, 7.4rem);
   font-weight: 900;
   font-style: italic;
   color: var(--white);
@@ -94,10 +94,10 @@
 /* Subtitle / description */
 .landing-lead {
   max-width: 580px;
-  margin: 0 auto 56px;
+  margin: 0 auto 34px;
   color: rgba(255, 255, 255, 0.72);
-  font-size: clamp(1rem, 1.6vw, 1.22rem);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  line-height: 1.55;
 }
 
 /* Scroll CTA button */
