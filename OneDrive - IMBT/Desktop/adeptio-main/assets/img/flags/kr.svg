@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#fff"/>
+  <defs>
+    <clipPath id="tc"><circle cx="450" cy="300" r="148"/></clipPath>
+  </defs>
+  <circle cx="450" cy="300" r="148" fill="#CD2E3A"/>
+  <rect x="302" y="300" width="296" height="148" clip-path="url(#tc)" fill="#003478"/>
+  <circle cx="450" cy="374" r="74" fill="#CD2E3A"/>
+  <circle cx="450" cy="226" r="74" fill="#003478"/>
+  <!-- Trigrams: top-left ☰ Geon (3 solid) -->
+  <g transform="translate(170,175) rotate(-45)">
+    <rect x="-55" y="-22" width="110" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="2" width="110" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="26" width="110" height="16" rx="8" fill="#000"/>
+  </g>
+  <!-- top-right ☵ Gam (broken-solid-broken) -->
+  <g transform="translate(730,175) rotate(45)">
+    <rect x="-55" y="-22" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="10" y="-22" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="2" width="110" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="26" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="10" y="26" width="45" height="16" rx="8" fill="#000"/>
+  </g>
+  <!-- bottom-left ☲ Li (solid-broken-solid) -->
+  <g transform="translate(170,425) rotate(45)">
+    <rect x="-55" y="-22" width="110" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="2" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="10" y="2" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="26" width="110" height="16" rx="8" fill="#000"/>
+  </g>
+  <!-- bottom-right ☷ Gon (3 broken) -->
+  <g transform="translate(730,425) rotate(-45)">
+    <rect x="-55" y="-22" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="10" y="-22" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="2" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="10" y="2" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="-55" y="26" width="45" height="16" rx="8" fill="#000"/>
+    <rect x="10" y="26" width="45" height="16" rx="8" fill="#000"/>
+  </g>
+</svg>
