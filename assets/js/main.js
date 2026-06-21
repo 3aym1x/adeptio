@@ -84,10 +84,10 @@ if (destParam) {
   }
 }
 
-/* ── Contact form — Formspree ──────────────────────────── */
-/* TODO: remplacer YOUR_FORM_ID par votre identifiant Formspree  */
-/*       Créer un compte sur https://formspree.io et copier l'ID  */
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+/* ── Contact form — ADEPTIO backend ────────────────────── */
+/* Relative path so it works both under a subfolder (localhost/ADEPTIO/)
+   and at a domain root. All pages live at the same depth.              */
+const CONTACT_ENDPOINT = 'api/submit-form.php';
 
 const contactForm = document.querySelector('[data-contact-form]');
 const formStatus  = document.querySelector('[data-form-status]');
@@ -103,24 +103,32 @@ contactForm?.addEventListener('submit', async event => {
   if (btnSpan) btnSpan.textContent = 'Envoi en cours…';
   if (formStatus) { formStatus.textContent = ''; formStatus.style.color = ''; }
 
+  // Tag the submission with the page it came from.
+  const data = new FormData(contactForm);
+  data.set('source_page', window.location.pathname);
+
   try {
-    const res = await fetch(FORMSPREE_ENDPOINT, {
+    const res = await fetch(CONTACT_ENDPOINT, {
       method:  'POST',
-      body:    new FormData(contactForm),
+      body:    data,
       headers: { Accept: 'application/json' }
     });
-    if (res.ok) {
+    const result = await res.json().catch(() => ({}));
+
+    if (res.ok && result.ok) {
       if (formStatus) {
-        formStatus.textContent = 'Message envoyé ! Nous vous recontacterons très bientôt.';
+        formStatus.textContent = result.message || 'Message envoyé ! Nous vous recontacterons très bientôt.';
         formStatus.style.color = '#16a34a';
       }
       contactForm.reset();
     } else {
-      throw new Error('non-ok');
+      throw new Error(result.error || 'non-ok');
     }
-  } catch {
+  } catch (err) {
     if (formStatus) {
-      formStatus.textContent = 'Une erreur est survenue. Réessayez ou écrivez-nous directement.';
+      formStatus.textContent = (err && err.message && err.message !== 'non-ok')
+        ? err.message
+        : 'Une erreur est survenue. Réessayez ou écrivez-nous directement.';
       formStatus.style.color = 'var(--orange)';
     }
   } finally {
@@ -128,3 +136,15 @@ contactForm?.addEventListener('submit', async event => {
     if (btnSpan) btnSpan.textContent = origText;
   }
 });
+
+/* ── Visit tracking — ping backend on load ─────────────── */
+(() => {
+  const body = new FormData();
+  body.set('page', window.location.pathname);
+  body.set('referrer', document.referrer || '');
+  fetch('api/track-visit.php', {
+    method: 'POST',
+    body,
+    keepalive: true
+  }).catch(() => { /* tracking is best-effort, never block the page */ });
+})();

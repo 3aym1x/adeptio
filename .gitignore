@@ -1,0 +1,2 @@
+# Mail credentials (Gmail App Password) — never commit
+admin/config/mail.php

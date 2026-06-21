@@ -544,9 +544,14 @@
         </div>
 
         <form class="contact-form reveal reveal-delay-1" data-contact-form>
+          <input type="hidden" name="form_type" value="etudiant">
           <label>
             <span>Nom &amp; prénom</span>
             <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
           </label>
           <label>
             <span>Téléphone</span>
