@@ -187,6 +187,8 @@ textarea {
 }
 
 .header-cta {
+  justify-self: end;
+  grid-column: 3;
   margin-right: 28px;
   padding: 0 22px;
   color: var(--white);

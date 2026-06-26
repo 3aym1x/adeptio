@@ -7,11 +7,23 @@
   overflow-x: hidden;
 }
 
+/* Header floats over the dark hero — no white band */
+.page-landing .site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
 /* ── Intro section ─────────────────────────────────────── */
 
 .landing-intro {
   position: relative;
-  min-height: calc(100vh - 88px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
