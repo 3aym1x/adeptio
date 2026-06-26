@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Prenez rendez-vous avec un conseiller ADEPTIO. Recevez une orientation adaptée à votre profil et aux destinations qui vous intéressent. Premier rendez-vous gratuit.">
-  <title>ADEPTIO Conseil — Prendre rendez-vous</title>
+  <meta name="description" content="À propos d'ADEPTIO Conseil : un cabinet de référence pour l'orientation à l'international et une équipe de conseillers pédagogiques à votre écoute.">
+  <title>À propos — ADEPTIO Conseil</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -26,91 +26,91 @@
       <a class="nav-link" href="etudiant.html">Accueil</a>
       <a class="nav-link" href="destinations.html">Destinations</a>
       <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link" href="a-propos.html">À propos</a>
+      <a class="nav-link is-active" href="a-propos.html">À propos</a>
       <a class="nav-link" href="faq.html">FAQ</a>
-      <a class="nav-link is-active" href="#contact">Contact</a>
+      <a class="nav-link" href="contact-etudiant.html">Contact</a>
     </nav>
-    <a class="header-cta" href="#contact">
+    <a class="header-cta" href="contact-etudiant.html">
       <i data-lucide="calendar-days"></i>
       <span>Rendez-vous</span>
     </a>
   </header>
 
-  <main id="accueil">
+  <main>
 
-    <!-- ── Contact ─────────────────────────────────────────── -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="container contact-layout">
-        <div class="contact-copy reveal">
-          <p class="section-kicker">Rendez-vous</p>
-          <h2 id="contact-title">Parlez à un conseiller ADEPTIO</h2>
-          <p>Recevez une orientation adaptée à votre profil et aux destinations qui vous intéressent. Premier rendez-vous gratuit.</p>
-          <ul class="contact-list">
-            <li><i data-lucide="map-pin"></i>Rue Oued Ziz, Immeuble 80, Appartement 5, Agdal — Rabat</li>
-            <li><i data-lucide="phone"></i>05 37 77 11 94 / 06 75 64 46 85</li>
-            <li><i data-lucide="mail"></i>info@adeptio.ma</li>
-          </ul>
+    <!-- ── À propos ────────────────────────────────────────── -->
+    <section class="about" id="apropos" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-copy reveal">
+          <p class="section-kicker">À propos</p>
+          <h2 id="about-title">Un cabinet de référence pour l'orientation à l'international</h2>
+          <p>ADEPTIO Conseil accompagne les étudiants et leurs familles dans le choix du programme, de l'école et du pays qui correspondent à leur profil, leur budget et leur projet professionnel.</p>
         </div>
-
-        <form class="contact-form reveal reveal-delay-1" data-contact-form>
-          <input type="hidden" name="form_type" value="etudiant">
-          <label>
-            <span>Nom &amp; prénom</span>
-            <input type="text" name="name" autocomplete="name" required>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
-          <label>
-            <span>Téléphone</span>
-            <input type="tel" name="phone" autocomplete="tel" required>
-          </label>
-          <label>
-            <span>Destination souhaitée</span>
-            <select name="destination" required>
-              <option value="">Choisir</option>
-              <option>France</option>
-              <option>Espagne</option>
-              <option>Angleterre</option>
-              <option>Malaisie</option>
-              <option>Corée du Sud</option>
-              <option>États-Unis</option>
-              <option>Chypre</option>
-              <option>Turquie</option>
-              <option>Suisse</option>
-            </select>
-          </label>
-          <label>
-            <span>Niveau d'études</span>
-            <select name="niveau" required>
-              <option value="">Choisir</option>
-              <option>Baccalauréat</option>
-              <option>Bac+1</option>
-              <option>Bac+2 (DUT / BTS / DEUG)</option>
-              <option>Licence (Bac+3)</option>
-              <option>Master (Bac+5)</option>
-              <option>Doctorat</option>
-              <option>Autre</option>
-            </select>
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="4" placeholder="Décrivez votre projet d'études, niveau actuel, questions…" required></textarea>
-          </label>
-          <label class="consent-label">
-            <input type="checkbox" name="consent" required>
-            <span class="consent-text">
-              J'accepte que mes données soient utilisées par ADEPTIO Conseil pour me recontacter dans le cadre de ma demande. Voir notre <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a>.
-            </span>
-          </label>
-          <button class="btn btn-primary" type="submit">
-            <i data-lucide="send"></i>
-            <span>Envoyer ma demande</span>
-          </button>
-          <p class="form-status" data-form-status aria-live="polite"></p>
-        </form>
+        <div class="about-points">
+          <article class="reveal reveal-delay-1">
+            <i data-lucide="target"></i>
+            <h3>Orientation personnalisée</h3>
+            <p>Analyse du profil, objectifs académiques, langue d'enseignement et choix de destination adaptés à chaque étudiant.</p>
+          </article>
+          <article class="reveal reveal-delay-2">
+            <i data-lucide="badge-check"></i>
+            <h3>Réseau d'écoles</h3>
+            <p>Des partenaires internationaux reconnus pour la qualité de leurs programmes et l'accueil des étudiants marocains.</p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <!-- ── Team ───────────────────────────────────────────── -->
+    <section class="team-section" aria-labelledby="team-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-kicker">Notre équipe</p>
+          <h2 id="team-title">Des conseillers à votre écoute</h2>
+          <p style="margin:14px 0 0;color:var(--muted);max-width:620px;">Nos conseillers pédagogiques sont spécialistes de chaque destination et vous accompagnent à chaque étape de votre parcours.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal reveal-delay-1">
+            <div class="team-avatar">
+              <!-- TODO: photo conseiller -->
+              <i data-lucide="user"></i>
+            </div>
+            <h3><!-- TODO: Prénom Nom --></h3>
+            <span class="team-role">Directrice pédagogique</span>
+            <p><!-- TODO: courte biographie — spécialisation, pays couverts, expérience --></p>
+          </div>
+          <div class="team-card reveal reveal-delay-2">
+            <div class="team-avatar">
+              <!-- TODO: photo conseiller -->
+              <i data-lucide="user"></i>
+            </div>
+            <h3><!-- TODO: Prénom Nom --></h3>
+            <span class="team-role">Conseiller — Europe & Amériques</span>
+            <p><!-- TODO: courte biographie --></p>
+          </div>
+          <div class="team-card reveal reveal-delay-3">
+            <div class="team-avatar">
+              <!-- TODO: photo conseiller -->
+              <i data-lucide="user"></i>
+            </div>
+            <h3><!-- TODO: Prénom Nom --></h3>
+            <span class="team-role">Conseillère — Asie & visa</span>
+            <p><!-- TODO: courte biographie --></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────────────────────── -->
+    <section class="dest-cta" id="contact-cta" aria-labelledby="about-cta-title">
+      <div class="container"><div class="dest-cta-inner reveal">
+        <p class="section-kicker" style="color:rgba(255,255,255,0.6);">Faisons connaissance</p>
+        <h2 id="about-cta-title">Discutons de <span>votre projet d'études</span></h2>
+        <p>Notre équipe vous reçoit pour une première consultation gratuite et sans engagement.</p>
+        <div class="dest-cta-btns">
+          <a class="btn btn-primary" href="contact-etudiant.html"><i data-lucide="calendar-days"></i><span>Prendre rendez-vous</span></a>
+        </div>
+      </div></div>
     </section>
 
   </main>
