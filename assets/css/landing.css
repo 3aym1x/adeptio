@@ -499,3 +499,113 @@
     justify-content: center;
   }
 }
+
+/* ── Rendez-vous profile modal ───────────────────────── */
+.header-cta { cursor: pointer; font-family: inherit; font-size: inherit; }
+
+body.rdv-modal-open { overflow: hidden; }
+
+.rdv-modal[hidden] { display: none; }
+
+.rdv-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.rdv-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 20, 0.6);
+  backdrop-filter: blur(4px);
+  animation: rdv-fade 200ms ease;
+}
+
+.rdv-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: var(--white);
+  border-radius: 24px;
+  padding: 44px 36px 40px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(11, 15, 20, 0.35);
+  animation: rdv-pop 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rdv-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(11, 15, 20, 0.06);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+.rdv-modal-close:hover { background: rgba(11, 15, 20, 0.12); }
+.rdv-modal-close svg { width: 20px; height: 20px; }
+
+.rdv-modal-title {
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.rdv-modal-text {
+  margin: 0 auto 28px;
+  max-width: 380px;
+  color: rgba(17, 17, 21, 0.7);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.rdv-modal-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.rdv-modal-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px 16px;
+  border: 2px solid rgba(11, 15, 20, 0.1);
+  border-radius: 18px;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+.rdv-modal-option svg { width: 34px; height: 34px; }
+.rdv-modal-option:hover {
+  transform: translateY(-3px);
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--white);
+}
+
+@keyframes rdv-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rdv-pop {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 480px) {
+  .rdv-modal-options { grid-template-columns: 1fr; }
+}

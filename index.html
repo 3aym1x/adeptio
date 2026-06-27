@@ -27,11 +27,33 @@
     </button>
 
 
-    <a class="header-cta" href="contact-etudiant.html">
+    <button class="header-cta" type="button" data-rdv-open>
       <i data-lucide="calendar-days"></i>
       <span>Rendez-vous</span>
-    </a>
+    </button>
   </header>
+
+  <!-- ── Modal choix de profil (Rendez-vous) ─────────────── -->
+  <div class="rdv-modal" id="rdv-modal" hidden>
+    <div class="rdv-modal-overlay" data-rdv-close></div>
+    <div class="rdv-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="rdv-modal-title">
+      <button class="rdv-modal-close" type="button" aria-label="Fermer" data-rdv-close>
+        <i data-lucide="x"></i>
+      </button>
+      <h2 id="rdv-modal-title" class="rdv-modal-title">Vous êtes&nbsp;?</h2>
+      <p class="rdv-modal-text">Sélectionnez votre profil pour accéder au formulaire de rendez-vous adapté.</p>
+      <div class="rdv-modal-options">
+        <a class="rdv-modal-option" href="contact-etudiant.html">
+          <i data-lucide="graduation-cap"></i>
+          <span>Étudiant</span>
+        </a>
+        <a class="rdv-modal-option" href="contact-professionnel.html">
+          <i data-lucide="briefcase"></i>
+          <span>Professionnel</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- ── Intro hero ──────────────────────────────────────── -->
   <section class="landing-intro" aria-labelledby="landing-title">
@@ -178,6 +200,28 @@
   <script src="assets/js/main.js"></script>
   <script>document.getElementById('yr') && (document.getElementById('yr').textContent = new Date().getFullYear());</script>
   <script>
+    // Rendez-vous profile modal
+    const rdvModal = document.getElementById('rdv-modal');
+    if (rdvModal) {
+      const openRdv = () => {
+        rdvModal.hidden = false;
+        document.body.classList.add('rdv-modal-open');
+      };
+      const closeRdv = () => {
+        rdvModal.hidden = true;
+        document.body.classList.remove('rdv-modal-open');
+      };
+      document.querySelectorAll('[data-rdv-open]').forEach(btn =>
+        btn.addEventListener('click', openRdv)
+      );
+      rdvModal.querySelectorAll('[data-rdv-close]').forEach(el =>
+        el.addEventListener('click', closeRdv)
+      );
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !rdvModal.hidden) closeRdv();
+      });
+    }
+
     // Smooth scroll CTA
     document.querySelector('[data-scroll-to]')?.addEventListener('click', function () {
       const target = document.getElementById(this.dataset.scrollTo);
