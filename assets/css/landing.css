@@ -457,16 +457,23 @@
   .split-screen {
     flex-direction: column;
     height: auto;
+    min-height: 0;
   }
 
   .split-side {
     flex: none !important;
-    height: 52vh;
-    min-height: 380px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .split-bg {
+    transform: none !important;
   }
 
   .split-content {
-    padding: 36px 28px;
+    width: 100%;
+    max-width: 100%;
+    padding: 64px 28px;
     opacity: 1 !important;
     transform: none !important;
   }
@@ -474,6 +481,27 @@
   .split-label,
   .split-divider {
     display: none;
+  }
+
+  /* Landing header has no nav menu — drop the dead hamburger
+     and keep the Rendez-vous CTA reachable on mobile. */
+  .page-landing .nav-toggle {
+    display: none;
+  }
+
+  .page-landing .header-cta {
+    display: inline-flex;
+    grid-column: 3;
+    justify-self: end;
+    min-height: 44px;
+    margin-right: 16px;
+    padding: 0 18px;
+    font-size: 0.9rem;
+  }
+
+  .page-landing .header-cta svg {
+    width: 19px;
+    height: 19px;
   }
 }
 
@@ -497,6 +525,18 @@
 
   .split-btn {
     justify-content: center;
+  }
+
+  /* Collapse the Rendez-vous CTA to an icon to free up header space */
+  .page-landing .header-cta {
+    min-width: 44px;
+    padding: 0;
+    margin-right: 12px;
+    border-radius: 50%;
+  }
+
+  .page-landing .header-cta span {
+    display: none;
   }
 }
 
